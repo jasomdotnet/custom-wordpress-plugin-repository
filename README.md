@@ -42,14 +42,13 @@ Tag versions like `1.1`, `1.2`, `1.3`...
 
 ## What code needs to be added to plugin for synchronization?
 
-I have attached a simple plugin in mypluginslug1.zip so read the code. It is also explained on repository homepage.
+I have attached a simple plugin in `mypluginslug1.zip` so read the code. It is also explained on script homepage.
 
 ## Where I can find more info?
-Script home page is [here](https://www.jasom.net/). This code was inspired by [@rudrastyh](https://github.com/rudrastyh)'s post [Self-Hosted Plugin Update](https://rudrastyh.com/wordpress/self-hosted-plugin-update.html) who took inspiration (I guess) from [@YahnisElsts](https://github.com/YahnisElsts)'s [wp-update-server](https://github.com/YahnisElsts/wp-update-server)
+Script homepage is [here](https://www.jasom.net/). This code was inspired by [@rudrastyh](https://github.com/rudrastyh)'s post [Self-Hosted Plugin Update](https://rudrastyh.com/wordpress/self-hosted-plugin-update.html) who took inspiration (I guess) from [@YahnisElsts](https://github.com/YahnisElsts)'s [wp-update-server](https://github.com/YahnisElsts/wp-update-server).
 
 ## Credits
 
-Yahnis Elsts https://w-shadow.com
-Misha Rudrastyh https://rudrastyh.com
-Jasom Dotnet https://www.jasom.net
-.
+[Yahnis Elsts](https://w-shadow.com)
+[Misha Rudrastyh](https://rudrastyh.com)
+[Jasom Dotnet](https://www.jasom.net)
