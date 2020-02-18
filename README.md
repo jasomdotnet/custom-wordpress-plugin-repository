@@ -47,8 +47,8 @@ I have attached a simple plugin in `mypluginslug1.zip` so read the code. It is a
 ## Where I can find more info?
 Script homepage is [here](https://www.jasom.net/). This code was inspired by [@rudrastyh](https://github.com/rudrastyh)'s post [Self-Hosted Plugin Update](https://rudrastyh.com/wordpress/self-hosted-plugin-update.html) who took inspiration (I guess) from [@YahnisElsts](https://github.com/YahnisElsts)'s [wp-update-server](https://github.com/YahnisElsts/wp-update-server).
 
-## Credits
+## Credit
 
-[Yahnis Elsts](https://w-shadow.com)
-[Misha Rudrastyh](https://rudrastyh.com)
-[Jasom Dotnet](https://www.jasom.net)
+- [Yahnis Elsts](https://w-shadow.com)
+- [Misha Rudrastyh](https://rudrastyh.com)
+- [Jasom Dotnet](https://www.jasom.net)
