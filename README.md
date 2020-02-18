@@ -1,7 +1,7 @@
-# custom-wordpress-plugin-repository
+# Custom Wordpress Plugin Repository
 Private self-hosted Wordpress plugin (and theme) repository so your custom plugins (and themes) can be updated automatically. I have released this code so you can start building your solution upon.
 
-## What are minimum requirements
+## What are minimum requirements?
 I don't know min. requirements, but it runs for me on PHP 7.3. It needs no database and requires access to shell + unzip class (both are not a big deal even on shared web-hosts).
 
 ## How to configure the repository server?
@@ -47,7 +47,7 @@ I have attached a simple plugin in `mypluginslug1.zip` so read the code. It is a
 ## Where I can find more info?
 Script homepage is [here](https://www.jasom.net/). This code was inspired by [@rudrastyh](https://github.com/rudrastyh)'s post [Self-Hosted Plugin Update](https://rudrastyh.com/wordpress/self-hosted-plugin-update.html) who took inspiration (I guess) from [@YahnisElsts](https://github.com/YahnisElsts)'s [wp-update-server](https://github.com/YahnisElsts/wp-update-server).
 
-## Credit
+### Credit
 
 - [Yahnis Elsts](https://w-shadow.com)
 - [Misha Rudrastyh](https://rudrastyh.com)
