@@ -9,7 +9,7 @@ I don't know min. requirements, but it runs for me on PHP 7.3. It needs no datab
 2. Set web accessible cronjob `https://www.example.com/repositoryfolder/get-info.php?action=cron` to every 6 hours
 
 ## How do looks like a plugin header?
-Repo script supports out of the box plugins with structure : `mypluginslug1/mypluginslug1.php` while plugin header looks as follows:
+Repo script supports out of the box plugins with structure: `mypluginslug1/mypluginslug1.php` while plugin header looks as follows:
 
 ```
 /**
@@ -30,21 +30,21 @@ Tag versions like `1.1`, `1.2`, `1.3`...
 ## How to add a new plugin to repository server?
 1. Create plugin with following structure: `mypluginslug1/mypluginslug1.php`
 2. Zip plugin and upload it to repository folder
-3. In Config class, add a new plugin slug to the array represented by constant PLUGINS
+3. In Config class, add a new plugin slug to the array represented by constant `PLUGINS`
 4. Add 2 banners to the repository folder with the name (and dimensions) like `mypluginslug1-banner-1544x500.jpg` and `mypluginslug1-banner-772x250.jpg`
 5. Run cronjob above
 6. See final jSon under `https://www.example.com/repositoryfolder/get-info.php?slug=mypluginslug1`
 
 ## How to add a new plugin release?
-1. Remove old `mypluginslug1.zip`
-2. Upload new `mypluginslug1.zip`
+1. Remove old `mypluginslug1.zip` from repositore server
+2. Upload new `mypluginslug1.zip` (with changed version in plugin header) to repository server 
 3. Cronjob automatically does the rest
 
-## What code needs to be added to plugin for synchronization
+## What code needs to be added to plugin for synchronization?
 
 I have attached a simple plugin in mypluginslug1.zip so read the code. It is also explained on repository homepage.
 
-## Where I can find more info
+## Where I can find more info?
 Script home page is [here](https://www.jasom.net/). This code was inspired by [@rudrastyh](https://github.com/rudrastyh)'s post [Self-Hosted Plugin Update](https://rudrastyh.com/wordpress/self-hosted-plugin-update.html) who took inspiration (I guess) from [@YahnisElsts](https://github.com/YahnisElsts)'s [wp-update-server](https://github.com/YahnisElsts/wp-update-server)
 
 ## Credits
