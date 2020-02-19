@@ -17,13 +17,13 @@ function pa( $data ) {
 class Config {
 
     // repository server domain
-    const DOMAIN = 'https://www.domain.com';
+    const DOMAIN = 'https://www.example.com';
     // plugin tested up to version
     const TESTED = '5.3.2';
     // required wordpress version
     const REQUIRES = '5.0';
     // repository server folder
-    const DIR = 'repo';
+    const DIR = 'repositoryfolder';
     // array of repo server plugin slugs
     const PLUGINS = ['mypluginslug1', 'mypluginslug2'];
 
@@ -252,7 +252,7 @@ class RepoServer {
         // Domain the request came from
         $e = explode( '; ', $_SERVER[ 'HTTP_USER_AGENT' ] );
         $parse = parse_url( $e[ 1 ] );
-        $host = $parse[ 'host' ];
+        $host = htmlspecialchars( $parse[ 'host' ] ?? $_SERVER[ 'REMOTE_ADDR' ] );
         // Comma separated values (CSV) format
         // Plugin name, wordpress domain, unix timestamp, human readable timestamp
         $log = $this->slug . ',' . $host . ',' . time() . ',' . date( 'Y-m-d H:i:s', time() ) . PHP_EOL;

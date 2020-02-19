@@ -16,9 +16,9 @@
 # Defaults and options
 ###############
 define( 'PREFIX_PLUGIN_NAME', 'Myplugin One' );
-define( 'PREFIX_PLUGIN_VERSION', '1.0' );
+define( 'PREFIX_PLUGIN_VERSION', '1.0' ); // change verion here as well as in plugin definition
 define( 'PREFIX_DOMAIN', 'https://www.example.com' );
-define( 'PREFIX_REPOFOLDER', 'repo' );
+define( 'PREFIX_REPOFOLDER', 'repositoryfolder' );
 
 ###############
 # Logic
