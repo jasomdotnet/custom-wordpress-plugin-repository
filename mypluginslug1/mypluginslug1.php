@@ -15,11 +15,10 @@
 ###############
 # Defaults and options
 ###############
-define( 'PREFIX_PLUGIN_NAME', 'Myplugin One' );
-define( 'PREFIX_PLUGIN_VERSION', '1.0' ); // change verion here as well as in plugin definition
-define( 'PREFIX_DOMAIN', 'https://www.example.com' );
-define( 'PREFIX_REPOFOLDER', 'repositoryfolder' );
 
+define( 'PREFIX_PLUGIN_VERSION', '1.0' ); // when new release is read change verion in plugin definition as well as here
+define( 'PREFIX_DOMAIN', 'https://www.example.com' ); // replace with your domain, used in  lines 57 and 114
+define( 'PREFIX_REPOFOLDER', 'repositoryfolder' ); // replace wiht your folder, used in lines 57 and 114
 ###############
 # Logic
 ###############
@@ -52,7 +51,7 @@ function prefix_plugin_info( $res, $action, $args ) {
         return $res;
     }
 
-    // Trying to get from cache first, to disable cache see https://rudrastyh.com/wordpress/self-hosted-plugin-update.html
+    // Trying to get from cache first, to disable cache comment out lines 55, 64, 65, 66, 67
     if (false == $remote = get_transient( 'prefix_upgrade_mypluginslug1' )) {
 
         $remote = wp_remote_get( PREFIX_DOMAIN . '/' . PREFIX_REPOFOLDER . '/get-info.php?slug=mypluginslug1&action=info', array(
@@ -109,7 +108,7 @@ function prefix_push_update( $transient ) {
         return $transient;
     }
 
-    // trying to get from cache first, to disable cache comment 10,20,21,22,24
+    // trying to get from cache first, to disable cache comment out lines 112, 121, 122, 123, 124
     if (false == $remote = get_transient( 'prefix_upgrade_mypluginslug1' )) {
         // info.json is the file with the actual plugin information on your server
         $remote = wp_remote_get( PREFIX_DOMAIN . '/' . PREFIX_REPOFOLDER . '/get-info.php?slug=mypluginslug1&action=update', array(
