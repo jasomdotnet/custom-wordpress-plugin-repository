@@ -1,6 +1,6 @@
 ## Instructions
-- The content of this folder will be replaced after the first cron run with the content based on `mypluginslug1.zip`
-- I recommend you to disabple jSon cache white dev mode is on, instrucion are on the lines `54` and `111`
+- Folder content  will be replaced after the first cron run by the content based on `mypluginslug1.zip`.
+- I recommend you to disable jSon cache white dev mode is on, instrucion are on the lines `54` and `111`.
 
 ## Configuration
 1. Download `mypluginslug1.zip` from the folder above to your computer
