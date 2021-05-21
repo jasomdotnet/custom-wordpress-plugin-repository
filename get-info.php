@@ -19,9 +19,9 @@ class Config {
     // repository server domain
     const DOMAIN = 'https://www.example.com';
     // plugin tested up to version
-    const TESTED = '5.3.2';
+    const TESTED = '5.7.2';
     // required wordpress version
-    const REQUIRES = '5.0';
+    const REQUIRES = '5.7';
     // repository server folder
     const DIR = 'repositoryfolder';
     // array of repo server plugin slugs
@@ -74,34 +74,41 @@ class RepoServer {
 
         // if requested plugin is in repository
         if (in_array( $this->slug, Config::PLUGINS )) {
-            // decode json info file
-            if ($info_json = json_decode( file_get_contents( $this->slug . '_info.json' ), TRUE )) {
-                // create array
-                $this->data[ 'status' ] = 'ok';
-                $this->data[ 'name' ] = $info_json[ 'name' ];
-                $this->data[ 'slug' ] = $this->slug;
-                $this->data[ 'download_link' ] = Config::DOMAIN . '/' . Config::DIR . '/' . $this->slug . '.zip';
-                $this->data[ 'version' ] = $info_json[ 'version' ];
-                $this->data[ 'requires' ] = Config::REQUIRES;
-                $this->data[ 'tested' ] = Config::TESTED;
-                $this->data[ 'last_updated' ] = date( "Y-m-d H:i:s", $info_json[ 'created' ] );
-                $this->data[ 'upgrade_notice' ] = 'Plugin update is available.';
-                $this->data[ 'author' ] = $info_json[ 'author' ];
-                $this->data[ 'author_homepage' ] = $info_json[ 'author_homepage' ];
-                $this->data[ 'sections' ] = [
-                    'description' => $info_json[ 'desc' ],
-                    'installation' => 'Upload the plugin to your blog, activate it and that is it!',
-                        //'changelog' => '<h4>1.1 –  August 17, 2017</h4><ul><li>Some bugs are fixed.</li><li>Release date.</li></ul>',
-                ];
-                $this->data[ 'banners' ] = [
-                    'low' => Config::DOMAIN . '/' . Config::DIR . '/' . $this->slug . '-banner-772x250.jpg',
-                    'high' => Config::DOMAIN . '/' . Config::DIR . '/' . $this->slug . '-banner-1544x500.jpg',
-                ];
-            } else {
-                $this->data[ 'error' ] = 'no_valid_json_info_file';
+
+            foreach (Config::PLUGINS as $plugin) {
+
+                if ($plugin === $this->slug) {
+
+                    // decode json info file
+                    if ($info_json = json_decode( file_get_contents( $this->slug . '_info.json' ), TRUE )) {
+                        // create array
+                        $this->data[ 'status' ] = 'ok';
+                        $this->data[ 'name' ] = $info_json[ 'name' ];
+                        $this->data[ 'slug' ] = $this->slug;
+                        $this->data[ 'download_link' ] = Config::DOMAIN . '/' . Config::DIR . '/' . $this->slug . '.zip';
+                        $this->data[ 'version' ] = $info_json[ 'version' ];
+                        $this->data[ 'requires' ] = Config::REQUIRES;
+                        $this->data[ 'tested' ] = Config::TESTED;
+                        $this->data[ 'last_updated' ] = date( "Y-m-d H:i:s", $info_json[ 'created' ] );
+                        $this->data[ 'upgrade_notice' ] = 'Plugin update is available.';
+                        $this->data[ 'author' ] = $info_json[ 'author' ];
+                        $this->data[ 'author_homepage' ] = $info_json[ 'author_homepage' ];
+                        $this->data[ 'sections' ] = [
+                            'description' => $info_json[ 'desc' ],
+                            'installation' => 'Upload the plugin to your blog, activate it and that is it!',
+                                //'changelog' => '<h4>1.1 –  August 17, 2017</h4><ul><li>Some bugs are fixed.</li><li>Release date.</li></ul>',
+                        ];
+                        $this->data[ 'banners' ] = [
+                            'low' => Config::DOMAIN . '/' . Config::DIR . '/' . $this->slug . '-banner-772x250.jpg',
+                            'high' => Config::DOMAIN . '/' . Config::DIR . '/' . $this->slug . '-banner-1544x500.jpg',
+                        ];
+                    } else {
+                        $this->data[ 'error' ] = 'no_valid_json_info_file';
+                    }
+                }
             }
         } else {
-            $this->data[ 'error' ] = 'no_such_plugin';
+            $this->data[ 'error' ] = 'no_such_plugin_in_config_class';
         }
 
         // Log request
